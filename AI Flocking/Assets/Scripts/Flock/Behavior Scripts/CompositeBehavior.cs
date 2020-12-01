@@ -1,37 +1,37 @@
-﻿/*using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu(menuName = "Flock/Behavior/Composite")]
 public class CompositeBehavior : FlockBehavior
 {
     [System.Serializable]
-    
-    public struct BehaviorGroup
+   public class FlockClass
     {
-        public FlockBehavior behaviors;
-        public float weights;
+        public FlockBehavior behavior;
+        public float weight;
+
     }
-    public BehaviorGroup[] behaviors;
-    // Update is called once per frame
-    public override Vector2 CalculateMove(FlockAgent agent, List<Transform> context, Flock flock)
+    public FlockClass[] Flocks;
+
+    public override Vector2 CalculateMove(FlockAgent agent, List<Transform> context, List<Transform> areaContext, Flock flock)
     {
         Vector2 move = Vector2.zero;
-
-        for (int i = 0; i < behaviors.Length; i++)
+        //for every unit in the flock
+        for(int i = 0; i < Flocks.Length; i++)
         {
-            Vector2 partialMove = behaviors[i].behaviors.CalculateMove(agent,context,flock) * behaviors[i].weights;
+            //move based on weight
+            Vector2 partialMove = Flocks[i].behavior.CalculateMove(agent, context, areaContext, flock) * Flocks[i].weight;
+
             if(partialMove != Vector2.zero)
             {
-                if (partialMove.sqrMagnitude > behaviors[i].weights * behaviors[i].weights)
+                if(partialMove.SqrMagnitude()> Flocks[i].weight * Flocks[i].weight)
                 {
                     partialMove.Normalize();
-                    partialMove *= behaviors[i].weights;
+                    partialMove *= Flocks[i].weight;
                 }
                 move += partialMove;
             }
-            
         }
-    
+        return move;
     }
-}*/
-
+}

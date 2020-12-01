@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RedAIStateMachine : MonoBehaviour
 {
-    public RedCompositeBehavior RedComposite;
+    public CompositeBehavior RedComposite;
     public PursuitBehavior Pursuit;
     public Animator stateAnim;
 

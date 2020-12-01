@@ -1072,6 +1072,73 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1105632243
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1105632244}
+  - component: {fileID: 1105632246}
+  - component: {fileID: 1105632245}
+  m_Layer: 0
+  m_Name: Wolfpack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1105632244
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105632243}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1105632245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105632243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2b68b3ac2668e540b42aec8b2c56425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animalBehavior: {fileID: 11400000, guid: 2ca851b81d6123a4db40d46ae4f388b9, type: 2}
+  alive: 0
+  stateAnim: {fileID: 0}
+--- !u!114 &1105632246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105632243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcad276636a1a8d4a95e4475883f0a62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentPrefab: {fileID: 0}
+  behavior: {fileID: 0}
+  startingCount: 250
+  driveFactor: 10
+  maxSpeed: 5
+  neighborRadius: 1.5
+  areaRadius: 20
+  avoidanceRadiusMultiplier: 0.5
 --- !u!1 &1189597439
 GameObject:
   m_ObjectHideFlags: 0
@@ -1171,12 +1238,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agentPrefab: {fileID: 2546594429102851970, guid: 6f5cd65fc61c2f9479c850c940710c04,
     type: 3}
-  behavior: {fileID: 11400000, guid: 559a1049047b44848b5430dd9625334a, type: 2}
+  behavior: {fileID: 11400000, guid: 2ca851b81d6123a4db40d46ae4f388b9, type: 2}
   startingCount: 56
   driveFactor: 16.2
   maxSpeed: 5.5
-  neighborRadius: 2.22
-  areaRadius: 7.4
+  neighborRadius: 1.97
+  areaRadius: 14.8
   avoidanceRadiusMultiplier: 0.162
 --- !u!4 &1222786740
 Transform:
@@ -1457,7 +1524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agentPrefab: {fileID: 2546594429102851970, guid: 41734e98fc1bf94489aaa92ad4433f35,
     type: 3}
-  behavior: {fileID: 11400000, guid: bb9479af47845464ab82dff9b15700a0, type: 2}
+  behavior: {fileID: 0}
   startingCount: 74
   driveFactor: 19.3
   maxSpeed: 5.9

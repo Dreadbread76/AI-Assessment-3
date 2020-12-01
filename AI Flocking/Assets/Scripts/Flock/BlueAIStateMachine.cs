@@ -5,7 +5,7 @@ using UnityEngine;
 public class BlueAIStateMachine : MonoBehaviour
 {
 
-    public RedCompositeBehavior BlueComposite;
+    public CompositeBehavior BlueComposite;
     public HideBehaviour Hide;
     public Animator stateAnim;
 

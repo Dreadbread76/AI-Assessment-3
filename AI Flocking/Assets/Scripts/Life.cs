@@ -2,20 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Life : ScriptableObject 
+public class Life : MonoBehaviour
 {
+    public CompositeBehavior animalBehavior;
+
     #region Variables
-    public float health;
-    public float speed;
+    public bool alive;
+    public Animator stateAnim;
 
-    #endregion
-    public abstract Vector2 CalculateMove(FlockAgent agent, List<Transform> context, List<Transform> areaContext, Flock flock);
-
-    void Update()
+    private void Start()
     {
-        if(health <= 0)
+        alive = true;
+    }
+    private void Update()
+    {
+        if(alive == false)
         {
-            Destroy(this);
+            
         }
     }
+
+    #endregion
+
 }
