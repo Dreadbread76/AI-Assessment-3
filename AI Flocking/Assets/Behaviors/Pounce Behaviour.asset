@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4233497ad9f20a945b9c59140d408103, type: 3}
-  m_Name: Composite Behavior
+  m_Script: {fileID: 11500000, guid: 902326c6356e845488841edbbd80fc4c, type: 3}
+  m_Name: Pounce Behaviour
   m_EditorClassIdentifier: 
-  Flocks: []
+  filter: {fileID: 11400000, guid: 757c31947e5a54644a8b1d78b85e3eee, type: 2}

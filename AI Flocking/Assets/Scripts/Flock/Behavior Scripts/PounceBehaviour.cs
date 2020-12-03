@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[CreateAssetMenu(menuName = "Flock/Behavior/Pounce")]
 public class PounceBehaviour : FilteredFlockBehavior
 {
+
     
     public override Vector2 CalculateMove(FlockAgent agent, List<Transform> context, List<Transform> areaContext, Flock flock)
     {
@@ -18,7 +19,7 @@ public class PounceBehaviour : FilteredFlockBehavior
         foreach (Transform item in areaFilteredContext)
         {
             float distance = Vector2.Distance(item.position, agent.transform.position) ;
-            float pounceDistance = distance / 10;
+            float pounceDistance = distance / 20;
             float distancePercent = pounceDistance / flock.areaRadius;
             
             float inverseDistancePercent = 1 - distancePercent;
@@ -26,12 +27,13 @@ public class PounceBehaviour : FilteredFlockBehavior
 
             Vector2 direction = (item.position - agent.transform.position) * weight;
             
-
+            //When close to enemy, destroy it
 
             if (direction.SqrMagnitude() <= weight * weight)
             {
 
-                Destroy(item);
+                Destroy(item.gameObject);
+              
 
             }
            

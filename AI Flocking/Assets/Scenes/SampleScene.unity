@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -214,7 +214,7 @@ RectTransform:
   - {fileID: 1828467990}
   - {fileID: 1534661561}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -349,7 +349,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &111528921
 MonoBehaviour:
@@ -1082,11 +1082,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1105632244}
   - component: {fileID: 1105632246}
-  - component: {fileID: 1105632245}
+  - component: {fileID: 1105632247}
+  - component: {fileID: 1105632248}
   m_Layer: 0
   m_Name: Wolfpack
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_TagString: Wolf
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1098,27 +1099,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1105632243}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -10, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1105632245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1105632243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2b68b3ac2668e540b42aec8b2c56425, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animalBehavior: {fileID: 11400000, guid: 2ca851b81d6123a4db40d46ae4f388b9, type: 2}
-  alive: 0
-  stateAnim: {fileID: 0}
 --- !u!114 &1105632246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1131,14 +1117,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcad276636a1a8d4a95e4475883f0a62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agentPrefab: {fileID: 0}
-  behavior: {fileID: 0}
-  startingCount: 250
+  agentPrefab: {fileID: 2546594429102851970, guid: a9bdab6355857424d81dd597014611d1,
+    type: 3}
+  behavior: {fileID: 11400000, guid: 2ca851b81d6123a4db40d46ae4f388b9, type: 2}
+  startingCount: 100
   driveFactor: 10
   maxSpeed: 5
-  neighborRadius: 1.5
-  areaRadius: 20
+  neighborRadius: 2.43
+  areaRadius: 31.9
   avoidanceRadiusMultiplier: 0.5
+--- !u!95 &1105632247
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105632243}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8e42398a1205ca345b6b60953e03a8ec, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1105632248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105632243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09ea9481688f8c64d9b457818dd55bd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pounceStateBehavior: {fileID: 11400000, guid: 0aa537bb10a7eb84d82f2bc00916216d,
+    type: 2}
+  pursuitStateBehavior: {fileID: 11400000, guid: 2ca851b81d6123a4db40d46ae4f388b9,
+    type: 2}
+  docileStateBehavior: {fileID: 11400000, guid: 15cab0b831e6e4843ad744e35727e625,
+    type: 2}
+  fleeStateBehaviour: {fileID: 0}
+  stateAnim: {fileID: 1105632247}
+  flock: {fileID: 1105632246}
+  animalBehavior: {fileID: 11400000, guid: 2ca851b81d6123a4db40d46ae4f388b9, type: 2}
+  pursue: {fileID: 11400000, guid: 35b26fdff5f1442448faa018962faf61, type: 2}
+  pounce: {fileID: 11400000, guid: 6307dc79b3594d144ae2736bfa4fd398, type: 2}
+  pursueMultiplier: 2
+  pounceMultiplier: 5
+  predator: 0
 --- !u!1 &1189597439
 GameObject:
   m_ObjectHideFlags: 0
@@ -1203,98 +1236,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1222786738
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1222786740}
-  - component: {fileID: 1222786739}
-  - component: {fileID: 1222786741}
-  - component: {fileID: 1222786742}
-  m_Layer: 0
-  m_Name: Flock_Red
-  m_TagString: Untagged
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1222786739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1222786738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcad276636a1a8d4a95e4475883f0a62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agentPrefab: {fileID: 2546594429102851970, guid: 6f5cd65fc61c2f9479c850c940710c04,
-    type: 3}
-  behavior: {fileID: 11400000, guid: 2ca851b81d6123a4db40d46ae4f388b9, type: 2}
-  startingCount: 56
-  driveFactor: 16.2
-  maxSpeed: 5.5
-  neighborRadius: 1.97
-  areaRadius: 14.8
-  avoidanceRadiusMultiplier: 0.162
---- !u!4 &1222786740
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1222786738}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.15, y: 0.48, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1222786741
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1222786738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da5ec5a34e46c7444bfddc19443b3d6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RedComposite: {fileID: 11400000, guid: 559a1049047b44848b5430dd9625334a, type: 2}
-  Pursuit: {fileID: 11400000, guid: 35b26fdff5f1442448faa018962faf61, type: 2}
-  stateAnim: {fileID: 4134949168267098451, guid: 6f5cd65fc61c2f9479c850c940710c04,
-    type: 3}
-  redStates: 0
---- !u!95 &1222786742
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1222786738}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 421a0547b301d764d935effc1ce108e9, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1229402673
 GameObject:
   m_ObjectHideFlags: 0
@@ -1485,101 +1428,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1374701014}
   m_LocalRotation: {x: -0, y: -0, z: -0.64444524, w: 0.7646505}
-  m_LocalPosition: {x: 1.3900827, y: -4.176223, z: 0}
+  m_LocalPosition: {x: 9.630082, y: -4.176223, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -80.248}
---- !u!1 &1436968300
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1436968302}
-  - component: {fileID: 1436968301}
-  - component: {fileID: 1436968303}
-  - component: {fileID: 1436968304}
-  m_Layer: 0
-  m_Name: Flock_Blue
-  m_TagString: Untagged
-  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1436968301
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1436968300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcad276636a1a8d4a95e4475883f0a62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agentPrefab: {fileID: 2546594429102851970, guid: 41734e98fc1bf94489aaa92ad4433f35,
-    type: 3}
-  behavior: {fileID: 0}
-  startingCount: 74
-  driveFactor: 19.3
-  maxSpeed: 5.9
-  neighborRadius: 3.18
-  areaRadius: 10.1
-  avoidanceRadiusMultiplier: 0.22
---- !u!4 &1436968302
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1436968300}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.52, y: -6.43, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1436968303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1436968300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d243669e428254438e12d942e3beaae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BlueComposite: {fileID: 11400000, guid: bb9479af47845464ab82dff9b15700a0, type: 2}
-  Hide: {fileID: 11400000, guid: 9926aed1a5d506c48b95aec39a216f89, type: 2}
-  stateAnim: {fileID: 1436968304}
-  blueStates: 0
---- !u!95 &1436968304
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1436968300}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b0483f2cd8b53004782d05f542b8e9a1, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1490734539
 GameObject:
   m_ObjectHideFlags: 0
@@ -1770,11 +1624,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1523149019}
   m_LocalRotation: {x: -0, y: -0, z: 0.62824667, w: 0.77801424}
-  m_LocalPosition: {x: 1.25, y: 0.27963272, z: 0}
+  m_LocalPosition: {x: 9.49, y: 0.27963272, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 77.842}
 --- !u!1 &1530816070
 GameObject:
@@ -2042,6 +1896,101 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1554073601}
   m_CullTransparentMesh: 0
+--- !u!1 &1709891068
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1709891071}
+  - component: {fileID: 1709891070}
+  - component: {fileID: 1709891073}
+  - component: {fileID: 1709891072}
+  m_Layer: 0
+  m_Name: SheepFlock
+  m_TagString: Sheep
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1709891070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709891068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcad276636a1a8d4a95e4475883f0a62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentPrefab: {fileID: 2546594429102851970, guid: 80b9112657274194e8267292744c3c0b,
+    type: 3}
+  behavior: {fileID: 11400000, guid: 51e0f42e10b27da40bd06326bbc7ed5e, type: 2}
+  startingCount: 100
+  driveFactor: 17.57
+  maxSpeed: 5
+  neighborRadius: 2.62
+  areaRadius: 57.6
+  avoidanceRadiusMultiplier: 0.59
+--- !u!4 &1709891071
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709891068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1709891072
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709891068}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ef0eb6f5100ffb343ba71e8b7041a2ec, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1709891073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709891068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69cbe487c550d26448c47b14c686e223, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pounceStateBehavior: {fileID: 0}
+  pursuitStateBehavior: {fileID: 0}
+  docileStateBehavior: {fileID: 11400000, guid: 15cab0b831e6e4843ad744e35727e625,
+    type: 2}
+  fleeStateBehaviour: {fileID: 11400000, guid: f792b2360d1b04b4b9573360e5b4bb07, type: 2}
+  stateAnim: {fileID: 1709891072}
+  animalBehavior: {fileID: 0}
+  flock: {fileID: 1709891070}
+  Hide: {fileID: 11400000, guid: 9926aed1a5d506c48b95aec39a216f89, type: 2}
+  preyStates: 0
 --- !u!1 &1716901781
 GameObject:
   m_ObjectHideFlags: 0
@@ -2230,7 +2179,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -450, y: 200}
+  m_AnchoredPosition: {x: -350, y: 200}
   m_SizeDelta: {x: 120, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1828467991
@@ -2311,7 +2260,7 @@ Transform:
   - {fileID: 181515202}
   - {fileID: 320565623}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1873545067
 MonoBehaviour:
@@ -2430,11 +2379,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1874669004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.58, y: -1.08, z: 0}
+  m_LocalPosition: {x: 10.82, y: -1.08, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1948225467
 GameObject:
@@ -2708,11 +2657,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2000278535}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.54, y: -2.87, z: 0}
+  m_LocalPosition: {x: 10.78, y: -2.87, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &2000278538
 CircleCollider2D:

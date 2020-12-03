@@ -4,24 +4,25 @@ using UnityEngine;
 
 public class Life : MonoBehaviour
 {
-    public CompositeBehavior animalBehavior;
+   
+   
+   
+    public CompositeBehavior pounceStateBehavior;
+    public CompositeBehavior pursuitStateBehavior;
+    public CompositeBehavior docileStateBehavior;
+    public CompositeBehavior fleeStateBehaviour;
+
+
 
     #region Variables
-    public bool alive;
     public Animator stateAnim;
 
     private void Start()
     {
-        alive = true;
-    }
-    private void Update()
-    {
-        if(alive == false)
-        {
-            
-        }
-    }
+      
 
+    }
+   
     #endregion
 
 }

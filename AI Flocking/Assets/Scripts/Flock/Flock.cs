@@ -53,33 +53,45 @@ public class Flock : MonoBehaviour
     }
     private void Update()
     {
+
+       
         foreach (FlockAgent agent in agents)
         {
-            List<Transform> context = GetNearbyObjects(agent, neighborRadius);
-            List<Transform> areaContext = GetNearbyObjects(agent, areaRadius);
-            //FOR TESTING ONLY
-            //agent.GetComponent<SpriteRenderer>().color = Color.Lerp(Color.white, Color.red, context.Count / 6f);
-            Vector2 move = behavior.CalculateMove(agent, context, areaContext, this);
-            move *= driveFactor;
-            if (move.sqrMagnitude > squareMaxSpeed)
+            if (agent != null)
             {
-                move = move.normalized * maxSpeed;
+                List<Transform> context = GetNearbyObjects(agent, neighborRadius);
+                List<Transform> areaContext = GetNearbyObjects(agent, areaRadius);
+                //FOR TESTING ONLY
+                //agent.GetComponent<SpriteRenderer>().color = Color.Lerp(Color.white, Color.red, context.Count / 6f);
+                Vector2 move = behavior.CalculateMove(agent, context, areaContext, this);
+                move *= driveFactor;
+                if (move.sqrMagnitude > squareMaxSpeed)
+                {
+                    move = move.normalized * maxSpeed;
+                }
+                agent.Move(move);
             }
-            agent.Move(move);
+          
+
+           
         }
     }
-
+    
     List<Transform> GetNearbyObjects(FlockAgent agent, float radius)
     {
         List<Transform> context = new List<Transform>();
-        Collider2D[] contextColliders = Physics2D.OverlapCircleAll(agent.transform.position, neighborRadius);
-        foreach (Collider2D contextCollider in contextColliders)
+       if (agent != null)
         {
-            if (contextCollider != agent.AgentCollider)
+            Collider2D[] contextColliders = Physics2D.OverlapCircleAll(agent.transform.position, neighborRadius);
+            foreach (Collider2D contextCollider in contextColliders)
             {
-                context.Add(contextCollider.transform);
+                if (contextCollider != agent.AgentCollider)
+                {
+                    context.Add(contextCollider.transform);
+                }
             }
-        }
+       }
+       
         return context;
     }
 

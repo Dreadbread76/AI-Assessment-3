@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(menuName = "Flock/Behavior/Pursuit")]
+[CreateAssetMenu(menuName = "Flock/Behavior/Pounce")]
 public class PursuitBehavior : FilteredFlockBehavior
 {
     public List<Transform> enemies;
@@ -32,11 +32,11 @@ public class PursuitBehavior : FilteredFlockBehavior
             enemies = areaContext;
             if (weight > 0)
             {
-                agent.Animator.SetBool("Pursue", true);
+                agent.Animator.SetBool("pursue", true);
             }
             else
             {
-                agent.Animator.SetBool("Pursue", false);
+                agent.Animator.SetBool("pursue", false);
             }
             
         }

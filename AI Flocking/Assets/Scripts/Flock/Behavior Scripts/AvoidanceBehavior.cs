@@ -10,7 +10,7 @@ public class AvoidanceBehavior : FlockBehavior
         //if no neighbours, maintain current alignment
         if (context.Count == 0)
         {
-            return agent.transform.up;
+            return agent != null ? (Vector2) agent.transform.up : Vector2.zero;
         }
         //add all points together and average
         Vector2 avoidanceMove = Vector2.zero;

@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu(menuName = "Flock/Behaviour/Prey Behaviour")]
-public abstract class Prey : Life
+public class Prey : Life
 {
-    public Animator stateAnim;
+    public CompositeBehavior animalBehavior;
+    public Flock flock;
     public HideBehaviour Hide;
     public enum PreyInstincts
     {
@@ -15,7 +16,16 @@ public abstract class Prey : Life
     }
     ;
     public PreyInstincts preyStates;
-    IEnumerator PreyState()
+
+    public void Start()
+    {
+        StartCoroutine(PreyState());
+    }
+    public void Update()
+    {
+        flock.behavior = animalBehavior;
+    }
+    public IEnumerator PreyState()
     {
 
 
@@ -32,7 +42,7 @@ public abstract class Prey : Life
         }
         while (preyStates == PreyInstincts.EvadeAndHide)
         {
-            SheepHide();
+            SheepFleeAndHide();
             if (Hide.enemies == null)
             {
                 preyStates = PreyInstincts.Wander;
@@ -47,14 +57,14 @@ public abstract class Prey : Life
     public void SheepWander()
     {
         Debug.Log("Wander Enter");
-        animalBehavior.Flocks[6].weight = 0;
+        animalBehavior = docileStateBehavior;
         stateAnim.SetBool("flee", false);
     }
   
-    public void SheepHide()
+    public void SheepFleeAndHide()
     {
         Debug.Log("Hide Enter");
-        animalBehavior.Flocks[6].weight = 2;
-        stateAnim.SetBool("hide", true);
+        animalBehavior = fleeStateBehaviour;
+        stateAnim.SetBool("flee", true);
     }
 }

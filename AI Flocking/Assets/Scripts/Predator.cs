@@ -3,9 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu(menuName = "Flock/Behaviour/Predator Behaviour")]
 
-public abstract class Predator : Life
+public class Predator : Life
 {
-    
+
+    public Flock flock;
+
+    public CompositeBehavior animalBehavior;
+
+    public PursuitBehavior pursue;
+    public PounceBehaviour pounce;
 
     #region Variables
     public float pursueMultiplier = 2f;
@@ -21,7 +27,6 @@ public abstract class Predator : Life
     public enum predatorInstincts
     {
         Patrol,
-        Seek,
         Pursue,
         Attack,
 
@@ -29,43 +34,58 @@ public abstract class Predator : Life
     ;
 
     public predatorInstincts predator;
-    
 
+    public void Start()
+    {
+        StartCoroutine(PredatorStates());
+    }
+    public void Update()
+    {
+        flock.behavior = animalBehavior;
+    }
     // Update is called once per frame
-   IEnumerator PredatorStates()
+    public IEnumerator PredatorStates()
    {
         while(predator == predatorInstincts.Patrol)
         {
             Patrol();
+            if (pursue.enemies != null)
+            {
+                predator = predatorInstincts.Pursue;
+            }
+
+            yield return 0;
+        }
+      
+        while (predator == predatorInstincts.Pursue)
+        {
+            Pursue();
+            if (pursue.enemies == null)
+            {
+                predator = predatorInstincts.Patrol;
+            }
+           
 
             yield return 0;
         }
 
-   }
+    }
 
     public void Patrol()
     {
         Debug.Log("Patrol Enter");
-        animalBehavior.Flocks[6].weight = 0;
+        animalBehavior = docileStateBehavior;
+        
         stateAnim.SetBool("pursue", false);
     }
-    public void Seek()
-    {
-        Debug.Log("Patrol Enter");
-        stateAnim.SetBool("pursue", false);
-    }
+   
     public void Pursue()
     {
-        Debug.Log("Patrol Enter");
-        animalBehavior.Flocks[6].weight = 10;
+        Debug.Log("Pursue Enter");
+        animalBehavior = pounceStateBehavior;
         stateAnim.SetBool("pursue", true);
     }
-    public void Attack()
-    {
-        
-        Debug.Log("Attacking");
-        stateAnim.SetBool("pursue", true);
-    }
+    
     
     
     
