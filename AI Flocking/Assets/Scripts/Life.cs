@@ -14,15 +14,11 @@ public class Life : MonoBehaviour
 
 
 
-    #region Variables
+    
     public Animator stateAnim;
 
-    private void Start()
-    {
-      
-
-    }
    
-    #endregion
+   
+    
 
 }

@@ -13,15 +13,12 @@ public class Predator : Life
     public PursuitBehavior pursue;
     public PounceBehaviour pounce;
 
-    #region Variables
-    public float pursueMultiplier = 2f;
-    public float pounceMultiplier = 5f;
-    
+   
 
     [System.Serializable]
    
     
-    #endregion
+   
     
 
     public enum predatorInstincts

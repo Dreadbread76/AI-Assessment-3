@@ -4,8 +4,8 @@ ScriptsOnlyBuild:
     - AlignmentBehavior
     - AreaAvoidanceBehavior
     - AvoidanceBehavior
-    - BlueAIStateMachine
     - CohesionBehavior
+    - CompositeBehavior
     - DifferentFlockFilter
     - Flock
     - FlockAgent
@@ -13,9 +13,10 @@ ScriptsOnlyBuild:
     - Path
     - PauseMenu
     - PhysicsLayerFilter
+    - PounceBehaviour
+    - Predator
+    - Prey
     - PursuitBehavior
-    - RedAIStateMachine
-    - RedCompositeBehavior
     - SameFlockFilter
     - StayInRadiusBehavior
     - SteeredCohesionBehavior
@@ -73,25 +74,35 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 13900}
-    - Class: 114
-      Script: {instanceID: 13940}
-    - Class: 114
-      Script: {instanceID: 13948}
+      Script: {instanceID: 13944}
     - Class: 114
       Script: {instanceID: 13960}
     - Class: 114
+      Script: {instanceID: 13964}
+    - Class: 114
       Script: {instanceID: 13972}
     - Class: 114
-      Script: {instanceID: 13984}
+      Script: {instanceID: 13976}
     - Class: 114
-      Script: {instanceID: 13996}
+      Script: {instanceID: 13988}
+    - Class: 114
+      Script: {instanceID: 13992}
+    - Class: 114
+      Script: {instanceID: 14000}
     - Class: 114
       Script: {instanceID: 14004}
     - Class: 114
-      Script: {instanceID: 14012}
+      Script: {instanceID: 14008}
+    - Class: 114
+      Script: {instanceID: 14016}
+    - Class: 114
+      Script: {instanceID: 14020}
+    - Class: 114
+      Script: {instanceID: 14024}
     - Class: 114
       Script: {instanceID: 14028}
+    - Class: 114
+      Script: {instanceID: 14032}
     - Class: 114
       Script: {instanceID: 14040}
     - Class: 114
@@ -99,35 +110,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 14048}
     - Class: 114
-      Script: {instanceID: 14052}
-    - Class: 114
       Script: {instanceID: 14072}
     - Class: 114
       Script: {instanceID: 14076}
     - Class: 114
-      Script: {instanceID: 14108}
+      Script: {instanceID: 14094}
     - Class: 114
-      Script: {instanceID: 14116}
+      Script: {instanceID: 14232}
     - Class: 114
-      Script: {instanceID: 14134}
+      Script: {instanceID: 14252}
     - Class: 114
-      Script: {instanceID: 14288}
+      Script: {instanceID: 14292}
     - Class: 114
-      Script: {instanceID: 14326}
+      Script: {instanceID: 14676}
     - Class: 114
-      Script: {instanceID: 14552}
+      Script: {instanceID: 14930}
     - Class: 114
-      Script: {instanceID: 14702}
+      Script: {instanceID: 15052}
     - Class: 114
-      Script: {instanceID: 15070}
+      Script: {instanceID: 15142}
     - Class: 114
-      Script: {instanceID: 15158}
-    - Class: 114
-      Script: {instanceID: 15866}
-    - Class: 114
-      Script: {instanceID: 18254}
-    - Class: 114
-      Script: {instanceID: 18262}
+      Script: {instanceID: 15868}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -157,46 +160,16 @@ ScriptsOnlyBuild:
     className: SameFlockFilter
   - hash:
       serializedVersion: 2
-      Hash: 7001a2716a7344d25be5690bb1722b7a
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Predator
-  - hash:
-      serializedVersion: 2
-      Hash: 8220b46879dc5e37db1b940c938f5744
-    assemblyName: Unity.Timeline.dll
-    namespaceName: UnityEngine.Timeline
-    className: SignalEmitter
-  - hash:
-      serializedVersion: 2
-      Hash: c3d3430df9e3ea95e3e3d587961390fb
-    assemblyName: Unity.Timeline.dll
-    namespaceName: UnityEngine.Timeline
-    className: ControlTrack
-  - hash:
-      serializedVersion: 2
       Hash: b43fdd7bcf70944a1bccfd8e01a2ea89
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BlueCompositeBehavior
   - hash:
       serializedVersion: 2
-      Hash: a5781dc71a671b1ad2b38de19f24b71f
-    assemblyName: Unity.Timeline.dll
-    namespaceName: UnityEngine.Timeline
-    className: ActivationTrack
-  - hash:
-      serializedVersion: 2
       Hash: 8d4aac9823031fe6c166a3d05f3890f3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SteeredCohesionBehavior
-  - hash:
-      serializedVersion: 2
-      Hash: c3d3430df9e3ea95e3e3d587961390fb
-    assemblyName: Unity.Timeline.dll
-    namespaceName: UnityEngine.Timeline
-    className: MarkerTrack
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -211,28 +184,16 @@ ScriptsOnlyBuild:
     className: AvoidObstacleBehavior
   - hash:
       serializedVersion: 2
+      Hash: b43fdd7bcf70944a1bccfd8e01a2ea89
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CompositeBehavior
+  - hash:
+      serializedVersion: 2
       Hash: 22a8d6c96b78224ec5f1d732be9a2699
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: WanderBehavior
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: PathFilter
-  - hash:
-      serializedVersion: 2
-      Hash: 457071fa953f1d9c0e31eee8b3e3bb1a
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: PursuitBehavior
-  - hash:
-      serializedVersion: 2
-      Hash: f5bea1ac748d3afc03a1c596bc715c1d
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Prey
   - hash:
       serializedVersion: 2
       Hash: b43fdd7bcf70944a1bccfd8e01a2ea89
@@ -241,13 +202,25 @@ ScriptsOnlyBuild:
     className: RedCompositeBehavior
   - hash:
       serializedVersion: 2
-      Hash: f336e086360abe49a3323e5f1583c35a
-    assemblyName: Unity.Timeline.dll
-    namespaceName: UnityEngine.Timeline
-    className: AudioTrack
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PathFilter
   - hash:
       serializedVersion: 2
-      Hash: ec20d49933e77b4d333f37726b20b62d
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UI
+  - hash:
+      serializedVersion: 2
+      Hash: 457071fa953f1d9c0e31eee8b3e3bb1a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PursuitBehavior
+  - hash:
+      serializedVersion: 2
+      Hash: a2f4b22bd83b735bc311b4066632e079
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BlueAIStateMachine
@@ -271,22 +244,10 @@ ScriptsOnlyBuild:
     className: AlignmentBehavior
   - hash:
       serializedVersion: 2
-      Hash: c3d3430df9e3ea95e3e3d587961390fb
-    assemblyName: Unity.Timeline.dll
-    namespaceName: UnityEngine.Timeline
-    className: SignalTrack
-  - hash:
-      serializedVersion: 2
       Hash: 22a8d6c96b78224ec5f1d732be9a2699
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: AreaAvoidanceBehavior
-  - hash:
-      serializedVersion: 2
-      Hash: c1933cc0a2f4ff6eb13333347497beb3
-    assemblyName: Unity.Timeline.dll
-    namespaceName: UnityEngine.Timeline
-    className: TimelineAsset
   - hash:
       serializedVersion: 2
       Hash: 7483687397427b3288edbfbefbfb98b9
@@ -319,10 +280,10 @@ ScriptsOnlyBuild:
     className: LayerFilter
   - hash:
       serializedVersion: 2
-      Hash: bd3cf68c8964d3c66d1c43f4f98508c9
-    assemblyName: Unity.Timeline.dll
-    namespaceName: UnityEngine.Timeline
-    className: AnimationTrack
+      Hash: 73a240bcabf8147eb3d1e84ff828052e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PauseMenu
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -397,6 +358,18 @@ ScriptsOnlyBuild:
     className: GroupTrack
   - hash:
       serializedVersion: 2
+      Hash: a5781dc71a671b1ad2b38de19f24b71f
+    assemblyName: Unity.Timeline.dll
+    namespaceName: UnityEngine.Timeline
+    className: ActivationTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 5d026a1914127ca935debb56cd0444fa
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Predator
+  - hash:
+      serializedVersion: 2
       Hash: 72712369a7c681ad84fc255a5ec0b333
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -469,6 +442,12 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
+      Hash: bd3cf68c8964d3c66d1c43f4f98508c9
+    assemblyName: Unity.Timeline.dll
+    namespaceName: UnityEngine.Timeline
+    className: AnimationTrack
+  - hash:
+      serializedVersion: 2
       Hash: cf9f5cf2c3145a37ac07f00e50e460f9
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -487,7 +466,7 @@ ScriptsOnlyBuild:
     className: TMP_SubMeshUI
   - hash:
       serializedVersion: 2
-      Hash: fcdf06ab5ae9e102bdce3dd49a1d4649
+      Hash: 902a311f6d837bc8ee906ebe9b25f882
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: RedAIStateMachine
@@ -529,6 +508,12 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAsset
   - hash:
       serializedVersion: 2
+      Hash: c3d3430df9e3ea95e3e3d587961390fb
+    assemblyName: Unity.Timeline.dll
+    namespaceName: UnityEngine.Timeline
+    className: ControlTrack
+  - hash:
+      serializedVersion: 2
       Hash: 8dc90e648ac06f43bdd31ac9fa8f4579
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -545,6 +530,18 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: ScrollRect
+  - hash:
+      serializedVersion: 2
+      Hash: c3d3430df9e3ea95e3e3d587961390fb
+    assemblyName: Unity.Timeline.dll
+    namespaceName: UnityEngine.Timeline
+    className: SignalTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 0fd80ad5b7805244f31504bf029f31a1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Prey
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -595,6 +592,12 @@ ScriptsOnlyBuild:
     className: SignalReceiver
   - hash:
       serializedVersion: 2
+      Hash: 2adf50e20fed698f242b524182c69907
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Life
+  - hash:
+      serializedVersion: 2
       Hash: 5ad4aa237d47ac2bab17bacb672edf7a
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -625,16 +628,34 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
+      Hash: c1933cc0a2f4ff6eb13333347497beb3
+    assemblyName: Unity.Timeline.dll
+    namespaceName: UnityEngine.Timeline
+    className: TimelineAsset
+  - hash:
+      serializedVersion: 2
       Hash: 3b760e6526e13f7504f59e210145899a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
+      Hash: f336e086360abe49a3323e5f1583c35a
+    assemblyName: Unity.Timeline.dll
+    namespaceName: UnityEngine.Timeline
+    className: AudioTrack
+  - hash:
+      serializedVersion: 2
       Hash: 88cc9df3c6fc697bfbeacd24c0d6f2d7
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools
     className: BeforeAfterTestCommandState
+  - hash:
+      serializedVersion: 2
+      Hash: c3d3430df9e3ea95e3e3d587961390fb
+    assemblyName: Unity.Timeline.dll
+    namespaceName: UnityEngine.Timeline
+    className: MarkerTrack
   - hash:
       serializedVersion: 2
       Hash: d791aa6007fa3640be1164ea75bb087d
@@ -715,6 +736,12 @@ ScriptsOnlyBuild:
     className: Toggle
   - hash:
       serializedVersion: 2
+      Hash: 8220b46879dc5e37db1b940c938f5744
+    assemblyName: Unity.Timeline.dll
+    namespaceName: UnityEngine.Timeline
+    className: SignalEmitter
+  - hash:
+      serializedVersion: 2
       Hash: 7072231382eb3c4871b3dd75ad0227e1
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -731,19 +758,7 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: UI
-  - hash:
-      serializedVersion: 2
-      Hash: 73a240bcabf8147eb3d1e84ff828052e
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: PauseMenu
   platform: 5
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: G:/HDD Documents/TAFE/Assessments/AI Assessment 2/AI Flocking.exe
+  playerPath: G:/HDD Documents/TAFE/Assessments/AI Assessment 3 - Ryan Abela/AI Flocking.exe

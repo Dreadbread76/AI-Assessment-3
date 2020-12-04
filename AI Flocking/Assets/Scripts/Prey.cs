@@ -54,13 +54,14 @@ public class Prey : Life
       
 
     }
+    //Wandering
     public void SheepWander()
     {
         Debug.Log("Wander Enter");
         animalBehavior = docileStateBehavior;
         stateAnim.SetBool("flee", false);
     }
-  
+  //Fleeing and Hiding
     public void SheepFleeAndHide()
     {
         Debug.Log("Hide Enter");
